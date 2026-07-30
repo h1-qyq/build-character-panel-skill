@@ -123,6 +123,23 @@ python "$env:USERPROFILE\.codex\skills\.system\skill-creator\scripts\quick_valid
   skills/build-character-panel
 ```
 
+## Publish to GitHub
+
+After authenticating GitHub CLI, the repository can create and verify its own remote:
+
+```powershell
+gh auth login
+.\scripts\publish-to-github.ps1
+```
+
+The default repository is private and named `build-character-panel-skill`. To publish it publicly:
+
+```powershell
+.\scripts\publish-to-github.ps1 -Visibility public
+```
+
+The script refuses to publish a dirty worktree, never embeds credentials, verifies an existing `origin`, and supports PowerShell `-WhatIf`.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
