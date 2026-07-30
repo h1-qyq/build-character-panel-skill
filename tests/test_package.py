@@ -17,6 +17,16 @@ CORE_FILES = [
     "references/output-contract.md",
 ]
 
+PUBLIC_FILES = [
+    "assets/character-profile.schema.json",
+    "assets/quick-panel-template.md",
+    "assets/full-panel-template.md",
+    "scripts/profile_model.py",
+    "scripts/validate_profile.py",
+    "scripts/render_panel.py",
+    "references/example.md",
+]
+
 DOMAIN_IDS = [
     "identity",
     "roles-context",
@@ -43,6 +53,14 @@ class SkillPackageTests(unittest.TestCase):
     def test_core_files_exist(self) -> None:
         missing = [relative for relative in CORE_FILES if not (SKILL / relative).is_file()]
         self.assertEqual(missing, [])
+
+    def test_public_package_is_complete(self) -> None:
+        missing = [
+            relative for relative in PUBLIC_FILES if not (SKILL / relative).is_file()
+        ]
+        self.assertEqual(missing, [])
+        self.assertTrue((ROOT / "README.md").is_file())
+        self.assertTrue((ROOT / "LICENSE").is_file())
 
     def test_frontmatter_and_agent_metadata(self) -> None:
         skill_text = (SKILL / "SKILL.md").read_text(encoding="utf-8")
@@ -110,6 +128,39 @@ class SkillPackageTests(unittest.TestCase):
                     if placeholders.search(text):
                         matches.append(str(path.relative_to(SKILL)))
         self.assertEqual(matches, [])
+
+    def test_fictional_example_has_the_complete_visible_contract(self) -> None:
+        text = (SKILL / "references" / "example.md").read_text(encoding="utf-8")
+        for expected in [
+            "Lin Qiao",
+            "Core attributes",
+            "Skill tree",
+            "Equipment and resources",
+            "Quests",
+            "Unknowns",
+            "Next unlocks",
+            "Provenance and version",
+        ]:
+            with self.subTest(expected=expected):
+                self.assertIn(expected, text)
+        self.assertIn("fictional", text.lower())
+
+    def test_readme_documents_installation_tools_and_privacy(self) -> None:
+        text = (ROOT / "README.md").read_text(encoding="utf-8").lower()
+        for expected in [
+            "build-character-panel",
+            "installation",
+            "validate_profile.py",
+            "render_panel.py",
+            "privacy",
+            "unknown",
+            "confidence",
+            "evidence",
+            "python 3.10",
+            "mit",
+        ]:
+            with self.subTest(expected=expected):
+                self.assertIn(expected, text)
 
 
 if __name__ == "__main__":
