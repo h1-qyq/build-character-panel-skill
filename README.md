@@ -129,16 +129,18 @@ After authenticating GitHub CLI, the repository can create and verify its own re
 
 ```powershell
 gh auth login
-.\scripts\publish-to-github.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\publish-to-github.ps1
 ```
 
 The default repository is private and named `build-character-panel-skill`. To publish it publicly:
 
 ```powershell
-.\scripts\publish-to-github.ps1 -Visibility public
+powershell -NoProfile -ExecutionPolicy Bypass -File `
+  .\scripts\publish-to-github.ps1 `
+  -Visibility public
 ```
 
-The script refuses to publish a dirty worktree, never embeds credentials, verifies an existing `origin`, and supports PowerShell `-WhatIf`.
+The process-scoped execution policy leaves the system policy unchanged. The script refuses to publish a dirty worktree, never embeds credentials, verifies an existing `origin`, and supports PowerShell `-WhatIf`.
 
 ## License
 

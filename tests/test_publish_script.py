@@ -15,7 +15,8 @@ class PublishScriptTests(unittest.TestCase):
             "SupportsShouldProcess",
             'ValidateSet("private", "public", "internal")',
             'Visibility = "private"',
-            "gh auth status",
+            'cmd /d /c "gh auth status >nul 2>nul"',
+            "GitHub CLI is not authenticated.",
             "git status --porcelain",
             "gh api user --jq .login",
             "gh repo create",
@@ -30,6 +31,15 @@ class PublishScriptTests(unittest.TestCase):
         for forbidden in ["github_token", "gh_token", "password =", "token ="]:
             with self.subTest(forbidden=forbidden):
                 self.assertNotIn(forbidden, text)
+
+    def test_readme_uses_process_scoped_execution_policy(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn(
+            "powershell -NoProfile -ExecutionPolicy Bypass -File "
+            r".\scripts\publish-to-github.ps1",
+            readme,
+        )
+        self.assertNotIn("\n.\\scripts\\publish-to-github.ps1\n", readme)
 
 
 if __name__ == "__main__":
