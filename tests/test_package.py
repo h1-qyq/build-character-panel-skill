@@ -115,6 +115,15 @@ class SkillPackageTests(unittest.TestCase):
             with self.subTest(term=term):
                 self.assertIn(term, combined)
 
+    def test_scoring_blocks_role_title_only_numeric_ratings(self) -> None:
+        text = (
+            SKILL / "references" / "evidence-and-scoring.md"
+        ).read_text(encoding="utf-8").lower()
+        self.assertIn(
+            "a role or job title alone cannot support a numeric score",
+            text,
+        )
+
     def test_skill_contains_no_authoring_placeholders(self) -> None:
         placeholders = re.compile(
             r"\b(TBD|TODO|implement later|fill in details|example_placeholder)\b",

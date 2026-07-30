@@ -44,6 +44,8 @@ Scores are optional snapshots. Use them only when they improve comparison, track
 
 These anchors describe evidence-backed performance, not potential. Do not use extreme scores from adjectives alone.
 
+A role or job title alone cannot support a numeric score. Age, intent, tool access, credentials, a self-label, or one unverified adjective also cannot establish a performance range. These facts may identify a relevant domain or unlock a skill slot, but the score stays unknown until an outcome, artifact, repeated example, or comparable observation meets an anchor.
+
 Every scored attribute requires:
 
 ```json

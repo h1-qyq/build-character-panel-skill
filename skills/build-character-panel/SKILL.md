@@ -180,6 +180,7 @@ Read [example.md](references/example.md) only when a complete fictional example 
 
 - Every material claim has a state.
 - Every numeric score has evidence and separate confidence.
+- No numeric performance score rests only on age, role, job title, intent, tool access, or a self-label.
 - Unknowns are visible and are not numeric defaults.
 - Conflicts preserve both sides and source labels.
 - Temporary state is not presented as a stable trait.
