@@ -1,0 +1,39 @@
+{
+  "schema_version": "2.0",
+  "profile": {
+    "display_name": "Invalid Example",
+    "language": "en",
+    "archetype": null,
+    "current_chapter": null,
+    "completeness": "quick"
+  },
+  "domains": [],
+  "core_attributes": [
+    {
+      "id": "craft",
+      "name": "Craft",
+      "score": 140,
+      "confidence": "high",
+      "evidence": [],
+      "rationale": "Unsupported."
+    }
+  ],
+  "traits": [],
+  "skills": [],
+  "resources": [],
+  "quests": [],
+  "status_effects": [],
+  "unknowns": [],
+  "conflicts": [],
+  "next_unlocks": [],
+  "provenance": {
+    "generated_at": "not-a-date",
+    "language": "en",
+    "sources": []
+  },
+  "version": {
+    "profile_version": "0",
+    "updated_at": "not-a-date",
+    "change_summary": ""
+  }
+}
