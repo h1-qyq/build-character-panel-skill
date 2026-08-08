@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0",
+  "profile": {
+    "display_name": "Lin Qiao",
+    "language": "en",
+    "archetype": "Evidence-minded independent maker",
+    "current_chapter": "Turning client craft into a first owned product",
+    "level": "Chapter 1",
+    "level_system": "milestone chapter",
+    "completeness": "quick"
+  },
+  "domains": [
+    {
+      "id": "identity",
+      "status": "known",
+      "summary": "Uses the name Lin Qiao and works as an independent brand designer.",
+      "evidence": [
+        {
+          "state": "stated",
+          "summary": "Lin Qiao described herself as an independent brand designer.",
+          "source": "user brief"
+        }
+      ]
+    },
+    {
+      "id": "capabilities-craft",
+      "status": "partial",
+      "summary": "Completed three restaurant brand projects with Figma and Illustrator.",
+      "evidence": [
+        {
+          "state": "stated",
+          "summary": "Three restaurant brand projects and two named tools were supplied.",
+          "source": "user brief"
+        }
+      ]
+    },
+    {
+      "id": "quests-missions",
+      "status": "known",
+      "summary": "Aims to release a first designer tool within 90 days.",
+      "evidence": [
+        {
+          "state": "stated",
+          "summary": "The 90-day product goal was explicit.",
+          "source": "user brief"
+        }
+      ]
+    }
+  ],
+  "core_attributes": [
+    {
+      "id": "craft",
+      "name": "Brand design craft",
+      "score": 62,
+      "confidence": "medium",
+      "evidence": [
+        {
+          "state": "stated",
+          "summary": "Completed three restaurant brand projects.",
+          "source": "user brief"
+        }
+      ],
+      "rationale": "Repeated project completion supports reliable performance in a bounded domain; artifacts were not supplied."
+    },
+    {
+      "id": "resilience",
+      "name": "Resilience",
+      "score": null,
+      "confidence": "unknown",
+      "evidence": [],
+      "rationale": "No setback-and-recovery evidence was supplied."
+    }
+  ],
+  "traits": [
+    {
+      "name": "Detail attentive",
+      "kind": "trait",
+      "summary": "Clients describe the work as detailed.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "state": "stated",
+          "summary": "Client feedback was reported as detailed.",
+          "source": "user brief"
+        }
+      ]
+    },
+    {
+      "name": "Independent research",
+      "kind": "preference",
+      "summary": "Prefers researching alone.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "state": "stated",
+          "summary": "The preference was directly supplied.",
+          "source": "user brief"
+        }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Restaurant brand design",
+      "level": 2,
+      "confidence": "medium",
+      "evidence": [
+        {
+          "state": "stated",
+          "summary": "Completed three restaurant brand projects.",
+          "source": "user brief"
+        }
+      ],
+      "next_unlock": "Inspect one finished case study and its outcome."
+    }
+  ],
+  "resources": [
+    {
+      "name": "Figma and Illustrator",
+      "category": "tool",
+      "summary": "Named tools used in current design work.",
+      "evidence": [
+        {
+          "state": "stated",
+          "summary": "Both tools were directly supplied.",
+          "source": "user brief"
+        }
+      ]
+    },
+    {
+      "name": "Four-month runway",
+      "category": "capital",
+      "summary": "Savings are described as covering about four months.",
+      "evidence": [
+        {
+          "state": "stated",
+          "summary": "Only a duration range, not an exact amount, was supplied.",
+          "source": "user brief"
+        }
+      ]
+    }
+  ],
+  "quests": [
+    {
+      "title": "Release a first designer tool",
+      "status": "active",
+      "stakes": "Create an owned product while protecting the limited runway.",
+      "next_action": "Choose one designer problem and collect five concrete examples.",
+      "blocker": "Product scope is not yet supplied.",
+      "success_signal": "A usable first version is publicly available within 90 days.",
+      "evidence": [
+        {
+          "state": "stated",
+          "summary": "The user supplied the goal and the 90-day window.",
+          "source": "user brief"
+        },
+        {
+          "state": "inferred",
+          "summary": "Problem selection is proposed as the first action because scope is unknown.",
+          "source": "panel synthesis"
+        }
+      ]
+    }
+  ],
+  "status_effects": [
+    {
+      "name": "Delivery drag",
+      "effect": "debuff",
+      "scope": "Some client deliveries are reported as late.",
+      "recovery": "Unknown; inspect the last two delayed projects before prescribing a counter.",
+      "evidence": [
+        {
+          "state": "stated",
+          "summary": "Client feedback included occasional delayed delivery.",
+          "source": "user brief"
+        }
+      ]
+    }
+  ],
+  "unknowns": [
+    "No portfolio artifacts were supplied.",
+    "The exact product problem and intended user are unknown.",
+    "No evidence supports a resilience score."
+  ],
+  "conflicts": [],
+  "next_unlocks": [
+    "One finished case study with an outcome would sharpen the craft rating.",
+    "The intended product user and problem would unlock a bounded first quest.",
+    "A delayed-project retrospective would identify a delivery recovery strategy."
+  ],
+  "provenance": {
+    "generated_at": "2026-07-30T08:00:00Z",
+    "language": "en",
+    "sources": [
+      {
+        "label": "user brief",
+        "kind": "user",
+        "date": "2026-07-30"
+      }
+    ]
+  },
+  "version": {
+    "profile_version": "1.0.0",
+    "updated_at": "2026-07-30T08:00:00Z",
+    "change_summary": "Initial quick profile from a fictional user brief."
+  }
+}
