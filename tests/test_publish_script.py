@@ -32,14 +32,17 @@ class PublishScriptTests(unittest.TestCase):
             with self.subTest(forbidden=forbidden):
                 self.assertNotIn(forbidden, text)
 
-    def test_readme_uses_process_scoped_execution_policy(self) -> None:
+    def test_readme_keeps_publish_mechanics_out_of_product_entrypoint(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        maintainer_doc = (
+            ROOT / "docs" / "maintainers" / "github-publishing.md"
+        ).read_text(encoding="utf-8")
+        self.assertNotIn("publish-to-github.ps1", readme)
         self.assertIn(
             "powershell -NoProfile -ExecutionPolicy Bypass -File "
             r".\scripts\publish-to-github.ps1",
-            readme,
+            maintainer_doc,
         )
-        self.assertNotIn("\n.\\scripts\\publish-to-github.ps1\n", readme)
 
 
 if __name__ == "__main__":
